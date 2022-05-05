@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+
+<body>
+  <header class="header">
+    <div class="left-header">
+      <figure>
+        <img src="./images/logo.svg" alt="snap logo">
+      </figure>
+      <nav class="nav">
+        <p id="features-p">Features<img src="./images/icon-arrow-down.svg" alt="" id="f-img"></p>
+        <p id="company">Company <img src="./images/icon-arrow-down.svg" alt="" id="c-img"></p>
+        <p>Careers</p>
+        <p>About</p>
+        <div id="dropdown1">
+          <div>
+            <img src="./images/icon-todo.svg" alt="">todo List
+          </div>
+          <div>
+            <img src="./images/icon-calendar.svg" alt="">Calendar
+          </div>
+          <div>
+            <img src="./images/icon-reminders.svg" alt="">Reminders
+          </div>
+          <div>
+            <img src="./images/icon-planning.svg" alt="">Planning
+          </div>
+        </div>
+        <div id="dropdown2">
+          <div>History</div>
+          <div>Our Team</div>
+          <div>Blog</div>
+        </div>
+      </nav>
+    </div>
+    <div class="right-header">
+      <button>Login</button>
+      <button>Register</button>
+    </div>
+    <div>
+      <img src="./images/icon-menu.svg" alt="" id="menu">
+    </div>
+    <div class="overlay"></div>
+    <nav id="nav2">
+      <div id="close"><img src="./images/icon-close-menu.svg" alt="" id="back"></div>
+      <div class="d1-container">
+        <p id="features-a">Features<img src="./images/icon-arrow-down.svg" alt="" id="a-img"></p>
+        <div id="dropdown11">
+          <div>
+            <img src="./images/icon-todo.svg" alt="">todo List
+          </div>
+          <div>
+            <img src="./images/icon-calendar.svg" alt="">Calendar
+          </div>
+          <div>
+            <img src="./images/icon-reminders.svg" alt="">Reminders
+          </div>
+          <div>
+            <img src="./images/icon-planning.svg" alt="">Planning
+          </div>
+        </div>
+
+      </div>
+      <div class="d2-container">
+        <p id="company-b">Company <img src="./images/icon-arrow-down.svg" alt="" id="b-img"></p>
+        <div id="dropdown22">
+          <div>History</div>
+          <div>Our Team</div>
+          <div>Blog</div>
+        </div>
+      </div>
+
+      <p>Careers</p>
+      <p>About</p>
+
+
+      <button class="log">Login</button>
+      <button class="reg">Register</button>
+    </nav>
+  </header>
+  <main class="main">
+    <section class="section1">
+      <h1 class="intro-text">Make remote work</h1>
+      <p class="description">Get your team in sync, no matter your location. Streamline processes,
+        create team rituals, and watch productivity soar.</p>
+      <button>Learn more</button>
+      <div class="images">
+        <img src="./images/client-databiz.svg" alt="">
+        <img src="./images/client-audiophile.svg" alt="">
+        <img src="./images/client-meet.svg" alt="">
+        <img src="./images/client-maker.svg" alt="">
+      </div>
+    </section>
+    <section class="section2">
+      <!-- <img src="./images/image-hero-desktop.png" alt=""> -->
+    </section>
+  </main>
+  <div class="attribution">
+    Coded by <a href="https://www.instagram.com/savage_skenzy1">Lordskenzy</a>.
+  </div>
+  <script>
+    let dropdown1 = document.getElementById("dropdown1");
+    let dropdown2 = document.getElementById("dropdown2");
+    let features = document.getElementById("features-p");
+    let company = document.getElementById("company");
+    let fImg = document.getElementById("f-img")
+    let cImg = document.getElementById("c-img")
+    dropdown1.style.display = "none"
+    dropdown2.style.display = "none"
+
+    features.addEventListener("click", function () {
+      if (dropdown1.style.display != "none") {
+        dropdown1.style.display = "none";
+        fImg.src = "./images/icon-arrow-down.svg"
+      } else {
+        dropdown1.style.display = "flex";
+        fImg.src = "./images/icon-arrow-up.svg"
+      }
+    })
+
+    company.addEventListener("click", function () {
+      if (dropdown2.style.display != "none") {
+        dropdown2.style.display = "none";
+        cImg.src = "./images/icon-arrow-down.svg"
+      } else {
+        dropdown2.style.display = "flex";
+        cImg.src = "./images/icon-arrow-up.svg"
+      }
+    })
+
+
+    /* this is java-script for nav2*/
+    let AImg = document.getElementById("a-img")
+    let BImg = document.getElementById("b-img")
+
+    let d1Container = document.querySelector(".d1-container")
+    let d2Container = document.querySelector(".d2-container")
+    let dropDown11 = document.querySelector("#dropdown11")
+    let dropDown22 = document.querySelector("#dropdown22")
+    let featuresA = document.querySelector("#features-a")
+    let companyB = document.querySelector("#company-b")
+
+    dropDown11.style.display = "none"
+
+    featuresA.addEventListener("click", () => {
+      if (dropDown11.style.display == "flex") {
+        dropDown11.style.display = "none"
+        d1Container.style.height = "initial"
+        AImg.src = "./images/icon-arrow-down.svg"
+      } else {
+        dropDown11.style.display = "flex"
+        d1Container.style.height = "130px"
+        AImg.src = "./images/icon-arrow-up.svg"
+      }
+    })
+    companyB.addEventListener("click", () => {
+      if (dropDown22.style.display == "flex") {
+        dropDown22.style.display = "none"
+        d2Container.style.height = "initial"
+        BImg.src = "./images/icon-arrow-down.svg"
+      } else {
+        dropDown22.style.display = "flex"
+        d2Container.style.height = "100px"
+        BImg.src = "./images/icon-arrow-up.svg"
+      }
+    })
+
+    let menu = document.getElementById("menu")
+    let nav2 = document.querySelector("#nav2")
+    let back = document.querySelector("#back")
+    let overlay = document.querySelector(".overlay")
+
+    menu.addEventListener("click", () => {
+      nav2.style.right = 0
+      nav2.style.transition = "right 0.7s ease-in"
+      overlay.style.display = "block"
+    })
+
+    back.addEventListener("click", () => {
+      overlay.style.display = "none"
+      nav2.style.right = "-300px"
+      nav2.style.transition = "right 0.7s ease-in"
+    })
+
+  </script>
+</body>
+
+</html>

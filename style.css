@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Epilogue', sans-serif;
+}
+
+:root {
+    --Almost-White: hsl(0, 0%, 98%);
+    --Medium-Gray: hsl(0, 0%, 41%);
+    --Almost-Black: hsl(0, 0%, 8%);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.header {
+    justify-content: space-between;
+    padding: 20px 12px;
+}
+
+.header,
+.nav,
+.header figure,
+.left-header,
+.right-header {
+    display: flex;
+    align-items: center;
+}
+
+.left-header {
+    width: 100%;
+    justify-content: space-around;
+}
+
+.right-header {
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.nav {
+    justify-content: space-between;
+    width: 60%;
+    position: relative;
+}
+
+.right-header button {
+    padding: 5px 10px;
+    background-color: inherit;
+    border: none;
+}
+
+.right-header button:nth-child(2) {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+
+/* main element*/
+.main {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.section2 {
+    width: 50%;
+    background-image: url("./images/image-hero-desktop.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* height: 300px; */
+}
+
+.intro-text {
+    font-size: 6.0rem;
+    font-weight: 700;
+    padding-top:  40px;
+}
+
+.description {
+    color: var(--Medium-Gray);
+    width: 400px;
+}
+
+.section1 button {
+    padding: 10px 18px;
+    width: 120px;
+    border: none;
+    border-radius: 10px;
+    color: var(--Almost-White);
+    background-color: var(--Almost-Black);
+}
+
+.section1 {
+    width: 900px;
+    display: flex;
+    gap: 30px;
+
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section1 .images img {
+    display: block;
+}
+
+.section1 .images {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav p,
+#dropdown1 div {
+    cursor: pointer;
+}
+
+#dropdown1,
+#dropdown2 {
+    position: absolute;
+    padding: 10px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    top: 20px;
+}
+
+#dropdown1 {
+    left: 5px;
+}
+
+#dropdown2 {
+    left: 130px;
+}
+
+.menu {
+    display: none;
+}
+#nav2 {
+     
+    display: none;
+    }
+
+@media screen and (max-width: 375px) {
+
+    .nav,
+    .right-header {
+        display: none;
+    }
+    .main{
+        flex-direction: column-reverse;
+    }
+    .menu {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .left-header {
+        justify-content: flex-start;
+    }
+
+    .header {
+        width: 100%;
+    }
+
+    .intro-text {
+        font-size: 2.3rem;
+    }
+
+    .section1 {
+        text-align: center;
+        width: 100%;
+    }
+
+    .description {
+        font-size: 0.94rem;
+        width: 95%;
+        margin: 0 auto;
+        line-height: 20px;
+    }
+
+    .section1 button {
+        margin: 0 auto;
+        padding: 18px 18px;
+        font-size: 1rem;
+        width: 150px;
+        border-radius: 15px;
+    }
+
+    .section1 .images img {
+        width: 70px;
+    }
+    .section2{
+        background-image: url("./images/image-hero-mobile.png");
+    height: 300px;
+    background-size: cover;
+    width: 100%;
+    }
+    #nav2{
+    padding: 5px 10px;
+    background-color: inherit;
+    border: none;
+}
+.images{
+    gap: 30px;
+}
+
+#nav2 {
+    /* display: none; */
+    position: fixed;
+    cursor: pointer;
+    right:-300px;
+    width: 200px;
+    top: 0;
+    bottom: 0;
+    color:var(--Medium-Gray);
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    z-index: 4;
+    flex-direction: column;
+    background-color:rgba(252, 252, 252, 0.986);
+    /* justify-content: center; */
+    /* align-items: center; */
+    }
+    .d1-container, .d2-container{
+        position: relative;
+        /* height: 130px; */
+    }
+    
+    #dropdown11, #dropdown22 {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    gap: 10px;
+    left: 20px;
+    top: 25px;
+    display: none;
+
+}
+
+.overlay{
+    position: fixed;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+    #close {
+        display: flex;
+
+        height: 23px;
+        right: 30px;
+        color:var(--Medium-Gray);
+        justify-content: flex-end;
+    }
+    .log{
+        border-style: none;
+        background-color:inherit; 
+        margin: 0 auto;
+        color:var(--Medium-Gray);
+    }
+    .reg{
+        padding: 10px;
+        border-radius: 10px;
+        color:var(--Medium-Gray);
+        background-color: var(--Almost-White);
+    }
+}
